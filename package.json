@@ -36,6 +36,7 @@
     "@tensorflow/tfjs": "^0.8.0",
     "brain.js": "^1.1.2",
     "colors": "^1.1.2",
+    "deeplearn": "^0.5.1",
     "mathjs": "^4.1.0",
     "ml-dataset-iris": "^1.0.0",
     "ml-pca": "^2.1.0",

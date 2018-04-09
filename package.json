@@ -36,6 +36,8 @@
     "colors": "^1.1.2",
     "ml-dataset-iris": "^1.0.0",
     "ml-pca": "^2.1.0",
+    "natural": "^0.5.6",
+    "node-mind": "https://github.com/qcgm1978/mind.git",
     "p2": "^0.7.1",
     "typescript": "^2.8.1"
   }

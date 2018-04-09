@@ -33,12 +33,17 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^0.8.0",
+    "brain.js": "^1.1.2",
     "colors": "^1.1.2",
+    "mathjs": "^4.1.0",
     "ml-dataset-iris": "^1.0.0",
     "ml-pca": "^2.1.0",
     "natural": "^0.5.6",
+    "neataptic": "^1.4.7",
     "node-mind": "https://github.com/qcgm1978/mind.git",
     "p2": "^0.7.1",
+    "synaptic": "^1.1.4",
     "typescript": "^2.8.1"
   }
 }

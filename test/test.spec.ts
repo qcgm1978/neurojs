@@ -3,6 +3,8 @@ import { expect } from 'chai';
 const window = {}
 // import { boot } from '../examples/cars/src/index'
 import * as p2 from 'p2'
+import * as PCA from 'ml-pca'
+import { getNumbers } from 'ml-dataset-iris'
 describe('Array', function () {
     describe('#indexOf()', function () {
         it('should return -1 when the value is not present', function () {
@@ -22,4 +24,32 @@ describe(`https://github.com/schteppe/p2.js`, () => {
             expect(world).to.be.an('object')
         });
     })
+});
+describe(`https://github.com/mljs/pca`, () => {
+    it(`Principal component analysis (PCA)`, () => {
+
+        const dataset = getNumbers();
+        // dataset is a two-dimensional array where rows represent the samples and columns the features
+        const pca = new PCA(dataset);
+        expect(pca.getExplainedVariance()).to.be.an('Array');
+        /*
+        [ 0.9246187232017269,
+          0.05306648311706785,
+          0.017102609807929704,
+          0.005212183873275558 ]
+        */
+        const newPoints = [[4.9, 3.2, 1.2, 0.4], [5.4, 3.3, 1.4, 0.9]];
+        expect(pca.predict(newPoints)).to.be.an('Array'); // project new points into the PCA space
+        /*
+        [
+          [ -2.830722471866897,
+            0.01139060953209596,
+            0.0030369648815961603,
+            -0.2817812120420965 ],
+          [ -2.308002707614927,
+            -0.3175048770719249,
+            0.059976053412802766,
+            -0.688413413360567 ]]
+        */
+    });
 });

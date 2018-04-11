@@ -8,7 +8,30 @@ import { getNumbers } from 'ml-dataset-iris'
 import * as Mind from 'node-mind';
 // import * as natural from 'natural';
 // var natural = require('natural');
+describe(`https://www.sitepoint.com/es6-collections-map-set-weakmap-weakset/`, () => {
+    it(`Creating a map and using common methods`, () => {
+        const map = new Map(); // Create a new Map
+        map.set('hobby', 'cycling'); // Sets a key value pair
 
+        const foods = { dinner: 'Curry', lunch: 'Sandwich', breakfast: 'Eggs' }; // New Object
+        const normalfoods = {}; // New Object
+
+        map.set(normalfoods, foods); // Sets two objects as key value pair
+
+        for (const [key, value] of map) {
+            throw Error
+        }
+        expect(map.hobby).to.equal(undefined)
+        expect(map.normalfoods).to.equal(undefined)
+
+        map.forEach((value, key) => {
+            typeof key === 'string' && expect(key).to.match(/hobby/)
+        }, map); // hobby = cycling  [object Object] = [object Object]
+
+        map.clear(); // Clears key value pairs
+        expect(map.size).to.equal(0); // True
+    });
+});
 describe(`https://github.com/NaturalNode/natural`, () => {
     describe(`Tokenizers`, () => {
         it(`Word, Regexp, and Treebank tokenizers are provided for breaking text up into arrays of tokens`, () => {

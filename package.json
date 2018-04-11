@@ -9,7 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress",
     "build": "webpack",
-    "test": "mocha test/**.spec.ts --require ts-node/register --watch-extensions ts --watch --recursive --inspect"
+    "test": "mocha test/**.spec.ts --require ts-node/register --watch-extensions ts --watch --debug=8101 --recursive --inspect"
   },
   "keywords": [
     "deep-learning",

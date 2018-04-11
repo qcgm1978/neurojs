@@ -8,6 +8,7 @@ import { getNumbers } from 'ml-dataset-iris'
 import * as Mind from 'node-mind';
 // import * as natural from 'natural';
 // var natural = require('natural');
+
 describe(`https://github.com/NaturalNode/natural`, () => {
     describe(`Tokenizers`, () => {
         it(`Word, Regexp, and Treebank tokenizers are provided for breaking text up into arrays of tokens`, () => {

@@ -4,6 +4,26 @@ import { Network } from 'neataptic';
 // The export parameters specify individual named exports, while the import * as name syntax imports all of them
 import * as math from 'mathjs';
 const brain = require('brain.js');
+describe(`https://en.wikipedia.org/wiki/Wheat_and_chessboard_problem`, () => {
+    it(`Math.js comes with a function math.eval to evaluate expressions`, () => {
+        expect(math.eval('sqrt(3^2 + 4^2)')).to.equal(5)
+        expect(math.eval('2^0+2^1+2^2')).to.equal(7)
+    });
+    it(`The total number of grains equals 18,446,744,073,709,551,615 (the 64th Mersenne number), much higher than what most intuitively expect.`, () => {
+        const chessGrids = Array.from(Array(64).keys())
+        let str = '';
+        for (let item in chessGrids) {
+            str += `2^${item}`
+        }
+        const sum = math.eval(str);
+        expect(sum).to.equal(Infinity)
+        // A googol is 10 to the 100th power (which is 1 followed by 100 zeros). A googol is larger than the number of elementary particles in the universe, which amount to only 10 to the 80th power.
+        const googol = 1e100
+        expect(sum).to.be.greaterThan(googol)
+        expect(Number(`18, 446, 744, 073, 709, 551, 615`.replace(/,|\s+/g, ''))).to.be.lessThan(googol)
+    });
+
+});
 describe(`https://arxiv.org/pdf/1804.01622.pdf`, () => {
     describe(`What I cannot create, I do not understand
 – Richard Feynman`, () => {
@@ -27,26 +47,6 @@ E ⊆ O × R × O is a set of directed edges of the form
             expect(math).to.an('object')
             // functions and constants
             expect(math.round(math.e, 3)).to.equal(2.718);
-            // expect(math.atan2(3, -3) / math.pi).toBe(0.75)
-            // expect(math.log(10000, 10)).toBe(4)
-            // expect(math.sqrt(-4)).toEqual({
-            //     re: 0, im: 2
-            // });
-
-            // // expressions
-            // expect(math.eval('12 / (2.3 + 0.7)')).toBe(4)
-            // expect(math.eval('12.7 cm to inch').value).toBe(0.127)
-            // expect(math.eval('sin(45 deg) ^ 2').toFixed(1)).toBe('0.5')
-            // expect(math.eval('9 / 3 + 2i')).toEqual({
-            //     re: 3, im: 2
-            // })
-            // expect(math.eval('det([-1, 2; 3, 1])')).toBe(-7)
-
-            // // chaining
-            // expect(math.chain(3)
-            //     .add(4)
-            //     .multiply(2)
-            //     .done()).toBe(14)
         });
     });
 

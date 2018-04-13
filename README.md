@@ -24,7 +24,7 @@ npm install
 npm start
 ```
 
-Open `http://localhost:8080/examples/` in your browser and select the demo you want to run.
+Open `http://localhost:8089/examples/` in your browser and select the demo you want to run.
 
 ### What's next?
 - More examples (pong, pendulum, snake,improved cars, etc.)

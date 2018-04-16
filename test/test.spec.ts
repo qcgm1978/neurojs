@@ -6,23 +6,8 @@ import * as p2 from 'p2'
 import * as PCA from 'ml-pca'
 import { getNumbers } from 'ml-dataset-iris'
 import * as Mind from 'node-mind';
-describe(`Others`, () => {
-    it(`Make sure to sprinkle a few of these bad boys in your API.`, (done) => {
-
-
-        function doStuff() {
-            return new Promise((resolve, reject) => setTimeout(() => {
-                reject("catch me if you can")
-            }, 0))
-
-        }
-        doStuff().catch((err) => {
-
-            expect(err).to.equal("catch me if you can")
-            done()
-        });
-    });
-});
+// import * as natural from 'natural';
+// var natural = require('natural');
 describe(`https://www.sitepoint.com/es6-collections-map-set-weakmap-weakset/`, () => {
     it(`Creating a map and using common methods`, () => {
         const map = new Map(); // Create a new Map
